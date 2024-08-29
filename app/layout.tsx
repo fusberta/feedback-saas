@@ -21,7 +21,9 @@ export default function RootLayout({
               <PageHeader />
             </div>
           </div>
-          {children}
+          <div className="w-full max-w-screen-xl mx-auto px-2.5 py-10 lg:px-20">
+            {children}
+          </div>
         </body>
       </html>
     </ClerkProvider>

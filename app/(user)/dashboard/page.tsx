@@ -3,15 +3,18 @@ import { db } from '@/db'
 import { projects } from '@/db/schema'
 import React from 'react'
 import { auth, currentUser } from '@clerk/nextjs/server'
+import { eq } from 'drizzle-orm'
+import ProjectsList from './projects-list'
 
 export default async function Page() {
-    const allProjects = await db.select().from(projects)
+    const { userId } = auth()
+    if (!userId) return null
 
-    const user = await currentUser()
-
-    console.log(user)
+    const userProjects = await db.select().from(projects).where(eq(projects.userId, userId))
 
     return (
-        <NewProjectBtn />
+        <>
+            <ProjectsList projects={userProjects} />
+        </>
     )
 }
