@@ -7,6 +7,7 @@ import {
 import Image from 'next/image'
 import React from 'react'
 import { Button } from './ui/button'
+import HeaderMenu from './header-menu'
 
 const PageHeader = () => {
     return (
@@ -26,6 +27,7 @@ const PageHeader = () => {
                 <SignedIn>
                     <UserButton />
                 </SignedIn>
+                <HeaderMenu />
             </div>
         </header>
     )
