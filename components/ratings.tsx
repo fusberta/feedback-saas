@@ -28,8 +28,7 @@ const Ratings = ({
         {[...Array(5)].map((_, index) => (
             <StarIcon
                 key={index}
-                className={`h-5 w-5 ${rating > index ? "fill-primary" : "fill-muted stroke-muted-foreground"
-                    }`}
+                className={`h-5 w-5 ${rating > index ? "fill-stone-300" : "fill-stone-600 stroke-stone-600"}`}
             />
         ))}
     </div>
