@@ -1,63 +1,10 @@
 import Image from "next/image";
+import LandingPage from "./landing-page";
 
 export default function Home() {
   return (
     <div className="">
-      <Image
-        src={'/default-monochrome.svg'}
-        width={400}
-        height={400}
-        alt='logo'
-      />
-      <Image
-        src={'/default-monochrome.svg'}
-        width={400}
-        height={400}
-        alt='logo'
-      />
-      <Image
-        src={'/default-monochrome.svg'}
-        width={400}
-        height={400}
-        alt='logo'
-      />
-      <Image
-        src={'/default-monochrome.svg'}
-        width={400}
-        height={400}
-        alt='logo'
-      />
-      <Image
-        src={'/default-monochrome.svg'}
-        width={400}
-        height={400}
-        alt='logo'
-      />
-      <Image
-        src={'/default-monochrome.svg'}
-        width={400}
-        height={400}
-        alt='logo'
-      />
-      <Image
-        src={'/default-monochrome.svg'}
-        width={400}
-        height={400}
-        alt='logo'
-      />
-      <Image
-        src={'/default-monochrome.svg'}
-        width={400}
-        height={400}
-        alt='logo'
-      />
-      <Image
-        src={'/default-monochrome.svg'}
-        width={400}
-        height={400}
-        alt='logo'
-      />
+      <LandingPage />
     </div>
-
   );
 }
