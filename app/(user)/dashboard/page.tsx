@@ -5,6 +5,7 @@ import React from 'react'
 import { auth, currentUser } from '@clerk/nextjs/server'
 import { eq } from 'drizzle-orm'
 import ProjectsList from './projects-list'
+import { getSubscription } from '@/actions/userSubscriptions'
 
 export default async function Page() {
     const { userId } = auth()
@@ -12,9 +13,13 @@ export default async function Page() {
 
     const userProjects = await db.select().from(projects).where(eq(projects.userId, userId))
 
+    const subscribed = await getSubscription({ userId })
+
     return (
         <>
-            <ProjectsList projects={userProjects} />
+            {!subscribed ?
+                <ProjectsList projects={userProjects} userId={userId} /> : null
+            }
         </>
     )
 }
